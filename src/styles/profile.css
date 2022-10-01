@@ -1,0 +1,59 @@
+.profile-box{
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid black; */
+    margin: 3rem ;
+    background-color: #fef3c7;
+    border-radius: 5px;
+}
+
+.profile-box-img{
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 0.45rem 0;
+}
+
+.profile-username{
+    padding: 0.5rem 0;
+}
+
+.profile-first-name{
+    font-size: 1.35rem;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+
+.profile-bio{
+    font-size: large;
+}
+
+.profile-following{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    margin-bottom: 0;
+    font-size: large;
+    font-weight: 700;
+}
+
+.following-box{
+    margin: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-update{
+    padding: 1rem 0;
+}
+
+.update-btn{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: white;
+}

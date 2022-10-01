@@ -1,5 +1,15 @@
+@import url("./styles/navbar.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto+Condensed:wght@300&display=swap');
+@import url("./styles/login.css");
+@import url("./styles/postCard.css");
+@import url("./styles/home.css");
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+@import url("./styles/profile.css");
+
+
 .App {
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App-logo {

@@ -1,0 +1,158 @@
+.post-card{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    border: 1px solid grey;
+    width: 75%;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    margin: 1rem 0;
+}
+
+.post-head{
+    display: flex;
+  margin: 1rem 0.5rem;
+     margin-bottom: 0;
+}
+
+
+.profile-img{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.profile-data{
+    /* display: flex;
+    flex-direction: column; */
+    margin-left: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.profile-opt{
+    font-size: larger;
+    padding-right: 0.5rem;
+    cursor: pointer;
+    /* position: absolute; */
+}
+
+.post-opt-box{
+    background-color: white;
+    border-radius: 0.5rem;
+   
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    height: 3rem;
+    justify-content: space-around;
+    /* padding: 0.2rem; */
+    position: relative;
+    right: 8px;
+    top: 10px;
+    z-index: 1;
+    
+}
+
+.post-opt{
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+
+.post-opt:hover{
+    background-color: #fef3c7;
+}
+
+
+.post-main{
+  text-align: left;
+  margin: 1rem 0.5rem;
+}
+
+.post-footer{
+    display: flex;
+    margin: 0 0.5rem;
+    justify-content: space-between;
+    font-size: large;
+}
+
+
+
+.post-card-icon{
+    margin: 4px;
+    cursor: pointer;
+}
+
+
+
+.create-post-footer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 0 ;
+    margin-top: 1rem;
+}
+
+.post-btn{
+    border: none;
+    background-color: #fef3c7;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.post-content{
+    width: 98%;
+    height: 2.5rem;
+    padding: 0 5px;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+
+.profile-data input:focus{
+    /* border: none; */
+    outline: none;
+}
+
+.edit-box{
+    display: flex;
+    align-items: center;
+}
+
+.edit-box input{
+    width: 100%;
+    height: 3rem;
+    margin: 0.5rem 0;
+    margin-right: 0.5rem;
+}
+
+.edit-save{
+    border: none;
+    background-color: #fef3c7;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    height: 2rem;
+}
+
+.cmt-input-box{
+    width: 76%;
+    display: flex;
+  
+}
+
+.cmt-input{
+    width: 100%;
+    height: 3rem;
+    margin: 0.5rem 0;
+    /* margin-right: 0.5rem; */
+}
+
+.cmt-btn{
+    border: none;
+    background-color: #fef3c7;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    height: 3rem;
+}

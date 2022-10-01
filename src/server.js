@@ -87,7 +87,7 @@ export function makeServer({ environment = "development" } = {}) {
         "/comments/edit/:postId/:commentId",
         editPostCommentHandler.bind(this)
       );
-      this.post(
+      this.delete(
         "/comments/delete/:postId/:commentId",
         deletePostCommentHandler.bind(this)
       );
@@ -101,7 +101,7 @@ export function makeServer({ environment = "development" } = {}) {
       );
       // user routes (public)
       this.get("/users", getAllUsersHandler.bind(this));
-      this.get("/users/:userId", getUserHandler.bind(this));
+      this.get("/users/:username", getUserHandler.bind(this));
 
       // user routes (private)
       this.post("users/edit", editUserHandler.bind(this));
