@@ -17,8 +17,15 @@ const initialState = {
 //         console.log(error)
 //     }
 // })
-
-export const getUser = createAsyncThunk("profile/getUser", async (userID) => { console.log(userID)
+export const getUsers = createAsyncThunk("profile/getUsers", async () => {
+    try {
+      const response = await axios.get(`/api/users/`);
+      return response;
+    } catch (error) {
+      console.log(error.response);
+    }
+  });
+export const getUser = createAsyncThunk("profile/getUser", async (userID) => {
     try {
       const response = await axios.get(`/api/users/${userID}`);
       return response;
@@ -34,7 +41,10 @@ const profileSlice = createSlice({
     extraReducers:{
         [getUser.fulfilled] : (state,action)=>{
             state.singleUser = action?.payload?.user;
-        }
+        },
+        [getUsers.fulfilled] : (state,action)=>{
+          state.users = action?.payload?.data?.users;
+      }
     }
 })
 

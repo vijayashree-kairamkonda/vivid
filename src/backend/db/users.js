@@ -10,10 +10,14 @@ export const users = [
     _id: uuid(),
     firstName: "vivek",
     lastName: "gudipudi",
-    username: "vivek",
+    username: "vivekgudipudi",
     password: "vivek",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    githubURL : "https://github.com/vivekgudipudi",
+    bio : "this is my bio",
+    profileIMG : "https://avatars.githubusercontent.com/u/37794298?v=4",
+
   },
   {
     _id: uuid(),
@@ -24,5 +28,7 @@ export const users = [
     profileIMG:"https://avatars.githubusercontent.com/u/75258563?v=4",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bio : 'what is meant to be will find a way',
+    githubURL : 'https://github.com/vijayashree-kairamkonda'
   },
 ];

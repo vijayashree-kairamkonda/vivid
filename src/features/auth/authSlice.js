@@ -65,8 +65,8 @@ const authSlice = createSlice({
   extraReducers: {
     [loginHandler.fulfilled]: (state, action) => {
       state.isLoggedIn = true;
-      state.user = action.payload.foundUser;
-      state.token = action.payload.encodedToken;
+      state.user = action.payload?.foundUser;
+      state.token = action.payload?.encodedToken;
     },
     [signupHandler.fulfilled]: (state,action)=>{console.log(action)
         state.isLoggedIn = true;

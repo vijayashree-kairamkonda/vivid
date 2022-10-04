@@ -7,6 +7,7 @@ export const CreatePost = ()=>{
   const [postContent, setPostContent] = useState("");
   const dispatch = useDispatch();
   const {token} = useSelector((state)=>state.auth)
+  const {user} = useSelector((store)=>store.auth)
 
   const createPostHandler= ()=>{
     if(postContent.length > 0){
@@ -24,7 +25,7 @@ export const CreatePost = ()=>{
           <div>
             <img
               className="profile-img"
-              src="https://avatars.githubusercontent.com/u/75258563?v=4"
+              src={user?.profileIMG}
               alt="profile"
             />
           </div>

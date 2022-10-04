@@ -4,14 +4,13 @@ import { useParams } from "react-router-dom";
 import { deleteComment, editComment } from "../features/comments/commentSlice";
 
 export const CommentCard = ({ comment }) => {
-  const { users } = useSelector((store) => store.posts);
+  const { users } = useSelector((store) => store.profile);
   const { user, token} = useSelector((store) => store.auth);
 const dispatch = useDispatch();
 const {postID} = useParams();
   const [options, showOptions] = useState(false);
   const [toggleEdit,setToggleEdit] = useState(false);
   const [content,setContent] = useState();
-
   return (
     <>
       <div className="post-card">

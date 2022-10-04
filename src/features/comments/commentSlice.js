@@ -40,11 +40,13 @@ async({token, postID, commentID})=>{
 
 export const editComment = createAsyncThunk("comments/editComment",async({token, postID, commentID, newContent})=>{
     const commentData = newContent;
+    console.log("edit comment",commentData)
     try{
         const response = await axios.post( `/api/comments/edit/${postID}/${commentID}`,{commentData},
         {
             headers : { authorization : token}
         });
+        console.log("cmnt res",response.data)
         return response.data;
     }catch(error){
         console.log(error)

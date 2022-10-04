@@ -8,12 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 export const NavBar = ()=>{
 
-    // const {isLoggedIn} = useSelector((store)=>store.auth);
     const dispatch = useDispatch();
-    const {user} = useSelector((store)=>store.profile);
+    const {user} = useSelector((store)=>store.auth);
    const navigate = useNavigate();
 
-   console.log(user)
+
     return(
         <header className="nav">
             <div className="nav-title">
@@ -23,7 +22,7 @@ export const NavBar = ()=>{
             </div>
             <div className="nav-components">
                 <div className="nav-pill" ><NavLink className="nav-link" to="/bookmark" >BOOKMARKS</NavLink></div>
-                <div className="nav-pill"><button className="nav-link" onClick={()=>(navigate(`/profile/${user?.username}`))}>PROFILE</button></div>
+                <div className="nav-pill"><button className="nav-link link-button" onClick={()=>(navigate(`/profile/${user?.username}`))}>PROFILE</button></div>
                
                {
                 localStorage.getItem("auth")? <div className="nav-pill"><NavLink className="nav-link" to="/login" onClick={()=>dispatch(userLogout())}>LOGOUT

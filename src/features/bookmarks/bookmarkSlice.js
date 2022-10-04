@@ -13,7 +13,6 @@ export const getBookmarks = createAsyncThunk(
       const response = await axios.get("/api/users/bookmark/", {
         headers: { authorization: token },
       });
-      console.log(response);
       return response.data;
     } catch (error) {
       console.log(error);

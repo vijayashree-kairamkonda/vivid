@@ -34,3 +34,12 @@
     text-decoration: none;
     color: black;
 }
+
+.link-button{
+    border:  none;
+    background-color: #fef3c7;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}

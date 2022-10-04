@@ -1,10 +1,12 @@
 .profile-box{
     display: flex;
     flex-direction: column;
-    /* border: 3px solid black; */
     margin: 3rem ;
     background-color: #fef3c7;
     border-radius: 5px;
+    padding: 0.5rem 0;
+    width: 100%;
+    height: max-content;
 }
 
 .profile-box-img{
