@@ -8,15 +8,6 @@ const initialState = {
     profileLoader :"idle",
 }
 
-// export const getUser = createAsyncThunk("posts/getUser", async(userID)=>{ console.log(userID)
-//     try{
-//             const response = await axios.get(`/api/users/${userID}`);
-//             return response.data; 
-            
-//     }catch(error){
-//         console.log(error)
-//     }
-// })
 export const getUsers = createAsyncThunk("profile/getUsers", async () => {
     try {
       const response = await axios.get(`/api/users/`);
@@ -33,6 +24,44 @@ export const getUser = createAsyncThunk("profile/getUser", async (userID) => {
       console.log(error.response);
     }
   });
+
+
+  export const addFollow = createAsyncThunk(
+    "posts/addFollow",
+    async ({ token, followID }) => {
+      try {
+        const response = await axios.post(
+          `/api/users/follow/${followID}`,
+          {},
+          {
+            headers: { authorization: token },
+          }
+        );
+        return response.data;
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+  );
+  
+  export const removeFollow = createAsyncThunk(
+    "posts/addFollow",
+    async ({ token, followID }) => {
+      try {
+        const response = await axios.post(
+          `/api/users/unfollow/${followID}`,
+          {},
+          {
+            headers: { authorization: token },
+          }
+        );
+        return response.data;
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+  );
+  
 
 const profileSlice = createSlice({
     name: "profile",

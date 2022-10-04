@@ -35,10 +35,11 @@ const navigate = useNavigate()
               .map((post) => <PostCard data={post} key={post._id} />)}
         </main>
         <aside className="home-aside">
+          <div className="aside-heading">People you may know : </div>
           {users.map((user) => (
             <div className="profile-aside" onClick={()=>navigate(`/profile/${user.username}`)}>
               <img className="profile-img" src={user.profileIMG}></img>
-              <div>{user.username}</div>
+              <div>@{user.username}</div>
             </div>
           ))}
         </aside>
