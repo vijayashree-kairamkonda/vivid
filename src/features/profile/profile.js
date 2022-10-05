@@ -26,7 +26,7 @@ export const Profile = () => {
     <>
       <NavBar />
       <div className="container">
-        <div className="wrapper wrapper-profile">
+        <div className="wrapper wrapper-profile mt-s">
           {filteredUser.map((user) => (
             <div className="profile-box">
               <div>

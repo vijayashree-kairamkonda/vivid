@@ -13,7 +13,7 @@ export const posts = [
     bio:"what is meant to be will find a way",
     img:"https://avatars.githubusercontent.com/u/75258563?v=4",
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
+      "Be a flamingo in a flock of pigeons",
     likes: {
       likeCount: 90,
       likedBy: [],
@@ -49,7 +49,7 @@ export const posts = [
     bio:" this is my bio",
     img:"https://avatars.githubusercontent.com/u/37794298?v=4",
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.",
+      "12 GB Ram + Google Tensor G2 + Android 13 + Pixel UI is going to make the Pixel 7 Pro the smoothest, most fluid phone in the world.",
     likes: {
       likeCount: 100,
       likedBy: [],
@@ -86,7 +86,7 @@ export const posts = [
     bio:"I'm a goooddddd doggyyy",
     img:"https://static.vecteezy.com/system/resources/previews/006/936/406/non_2x/cute-golden-retriever-puppy-smiling-cartoon-illustration-vector.jpg",
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
+      "If you try to wake me up again the sheet's gonna hit the fan",
     likes: {
       likeCount: 782,
       likedBy: [],

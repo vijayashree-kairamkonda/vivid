@@ -5,8 +5,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* margin: 10rem 0; */
-    /* padding: 3rem 0; */
+}
+
+.mt{
+    margin-top: 35rem;
+}
+
+.mt-s{
+    margin-top: 5rem;
 }
 
 .wrapper-profile{

@@ -24,7 +24,7 @@ const navigate = useNavigate()
       <NavBar />
 
       <div className="container">
-        <main className="wrapper">
+        <main className="wrapper mt">
           <br />
           <CreatePost />
           <br />
