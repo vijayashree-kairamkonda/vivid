@@ -11,7 +11,7 @@ export const Profile = () => {
   const { posts } = useSelector((store) => store.posts);
   const { users } = useSelector((store) => store.profile);
   const authStore = useSelector((store) => store.auth);
-  const { token } = authStore
+  const { token } = authStore;
 
   console.log(authStore.user.username);
 
@@ -39,7 +39,9 @@ export const Profile = () => {
               <div className="profile-username">@{user.username}</div>
               <div className="profile-first-name">{user.firstName}</div>
               <div className="profile-bio"> {user.bio}</div>
-              <NavLink to={user.githubURL} className="profile-url">{user.githubURL}</NavLink>
+              <NavLink to={user.githubURL} className="profile-url">
+                {user.githubURL}
+              </NavLink>
               <div className="profile-following">
                 <div className="following-box">
                   <span>Post</span> <span>{filteredPosts.length}</span>{" "}
@@ -51,20 +53,31 @@ export const Profile = () => {
                   <span>Following</span> <span>{user.following.length}</span>
                 </div>
               </div>
-              {
-                user.username !== authStore.user.username ?
-                 !user?.followers?.some(
+              {user.username !== authStore.user.username ? (
+                !user?.followers?.some(
                   (el) => el?.username === user?.username
-                ) ? <div className="profile-update">
-                <button className="update-btn" onClick={() => {
-                  dispatch(addFollow({ token, followID: user?._id }));
-                }}>Follow</button>
-              </div> : <button className="update-btn" onClick={() => {
-                  dispatch(removeFollow({ token, followID: user?._id }));
-                }}>UnFollow</button> 
-                : null
-              }
-              
+                ) ? (
+                  <div className="profile-update">
+                    <button
+                      className="update-btn"
+                      onClick={() => {
+                        dispatch(addFollow({ token, followID: user?._id }));
+                      }}
+                    >
+                      Follow
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    className="update-btn"
+                    onClick={() => {
+                      dispatch(removeFollow({ token, followID: user?._id }));
+                    }}
+                  >
+                    UnFollow
+                  </button>
+                )
+              ) : null}
             </div>
           ))}
 
@@ -76,4 +89,3 @@ export const Profile = () => {
     </>
   );
 };
-

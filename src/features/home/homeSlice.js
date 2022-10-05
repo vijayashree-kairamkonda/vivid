@@ -51,7 +51,7 @@ export const deletePost = createAsyncThunk(
 export const editPost = createAsyncThunk(
   "posts/editPost",
   async ({ token, data, newContent }) => {
-    const postData = {content : newContent};
+    const postData = { content: newContent };
     try {
       const response = await axios.post(
         `/api/posts/edit/${data._id}`,
@@ -60,7 +60,7 @@ export const editPost = createAsyncThunk(
           headers: { authorization: token },
         }
       );
-      console.log(response.data)
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -128,9 +128,9 @@ const postsSlice = createSlice({
     [addLiked.fulfilled]: (state, action) => {
       state.posts = action.payload.posts;
     },
-    [removeLiked.fulfilled]: (state,action)=>{
-        state.posts = action.payload.posts;
-    }
+    [removeLiked.fulfilled]: (state, action) => {
+      state.posts = action.payload.posts;
+    },
   },
 });
 

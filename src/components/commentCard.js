@@ -5,12 +5,12 @@ import { deleteComment, editComment } from "../features/comments/commentSlice";
 
 export const CommentCard = ({ comment }) => {
   const { users } = useSelector((store) => store.profile);
-  const { user, token} = useSelector((store) => store.auth);
-const dispatch = useDispatch();
-const {postID} = useParams();
+  const { user, token } = useSelector((store) => store.auth);
+  const dispatch = useDispatch();
+  const { postID } = useParams();
   const [options, showOptions] = useState(false);
-  const [toggleEdit,setToggleEdit] = useState(false);
-  const [content,setContent] = useState();
+  const [toggleEdit, setToggleEdit] = useState(false);
+  const [content, setContent] = useState();
   return (
     <>
       <div className="post-card">
@@ -31,26 +31,43 @@ const {postID} = useParams();
           </div>
           {options && (
             <div className="post-opt-box">
-              <div className="post-opt" onClick={()=> setToggleEdit((a)=> !a)}>Edit</div>
-              <div className="post-opt" onClick={()=>dispatch(deleteComment({token, postID, commentID : comment._id}))}>Delete</div>
+              <div
+                className="post-opt"
+                onClick={() => setToggleEdit((a) => !a)}
+              >
+                Edit
+              </div>
+              <div
+                className="post-opt"
+                onClick={() =>
+                  dispatch(
+                    deleteComment({ token, postID, commentID: comment._id })
+                  )
+                }
+              >
+                Delete
+              </div>
             </div>
           )}
 
-          {
-            comment?.username === user?.username ? <div className="profile-opt">
-            <i className="far fa-ellipsis-v" onClick={()=> showOptions((a)=> !a)} ></i>
-          </div> : null
-          }
-            
-         
-        
-          
+          {comment?.username === user?.username ? (
+            <div className="profile-opt">
+              <i
+                className="far fa-ellipsis-v"
+                onClick={() => showOptions((a) => !a)}
+              ></i>
+            </div>
+          ) : null}
         </header>
-        {
-          toggleEdit ? (
-           <div className="edit-box">
-             <input value={content} onChange={(e)=> setContent(e.target.value)} />
-            <button  className="edit-save"  onClick={() => {
+        {toggleEdit ? (
+          <div className="edit-box">
+            <input
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
+            <button
+              className="edit-save"
+              onClick={() => {
                 setToggleEdit(false);
                 dispatch(
                   editComment({
@@ -61,15 +78,16 @@ const {postID} = useParams();
                   })
                 );
                 setContent("");
-              }}> 
-            Save
+              }}
+            >
+              Save
             </button>
-            </div>
-          ): <main>
-          <div className="post-main">{comment.text}</div>
-        </main>
-        }
-        
+          </div>
+        ) : (
+          <main>
+            <div className="post-main">{comment.text}</div>
+          </main>
+        )}
       </div>
     </>
   );
