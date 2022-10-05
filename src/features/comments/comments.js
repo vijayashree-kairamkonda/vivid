@@ -6,23 +6,14 @@ import { PostCard } from "../../components/postCard";
 import { addComment } from "./commentSlice";
 import { useState } from "react";
 
-
-
-
-
 export const Comments = ({ comment }) => {
   const { postID } = useParams();
   const { posts } = useSelector((store) => store.posts);
   const postClicked = posts.filter((post) => post._id === postID);
-const {token} = useSelector((store)=>store.auth);
+  const { token } = useSelector((store) => store.auth);
   const { comments } = useSelector((store) => store.comments);
   const dispatch = useDispatch();
-  const[content, setContent] = useState();
-
-  
-  
-
-  
+  const [content, setContent] = useState();
 
   return (
     <>
@@ -35,13 +26,23 @@ const {token} = useSelector((store)=>store.auth);
 
           <div>
             <div className="cmt-input-box">
-              <input type="text" className="cmt-input" onChange={(e)=>setContent(e.target.value)}/>
-              <button className="cmt-btn"  onClick={() => { console.log(content)
-                dispatch(
-                  addComment({ token, postID, data: { text: content } })
-                );
-                setContent("");
-              }}>comment</button>
+              <input
+                type="text"
+                className="cmt-input"
+                onChange={(e) => setContent(e.target.value)}
+              />
+              <button
+                className="cmt-btn"
+                onClick={() => {
+                  console.log(content);
+                  dispatch(
+                    addComment({ token, postID, data: { text: content } })
+                  );
+                  setContent("");
+                }}
+              >
+                comment
+              </button>
             </div>
           </div>
 
@@ -49,7 +50,7 @@ const {token} = useSelector((store)=>store.auth);
             .slice()
             .reverse()
             .map((comment) => (
-              <CommentCard comment={comment}/>
+              <CommentCard comment={comment} />
             ))}
         </main>
       </div>

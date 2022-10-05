@@ -103,7 +103,12 @@ export const PostCard = ({ data }) => {
             <span>{data?.likes.likeCount}</span>
           </div>
           <div>
-           <NavLink to={`/comments/${data._id}`} ><i className="fal fa-comment post-card-icon" onClick={()=>dispatch(getComments({data}))}></i></NavLink> 
+            <NavLink to={`/comments/${data._id}`}>
+              <i
+                className="fal fa-comment post-card-icon"
+                onClick={() => dispatch(getComments({ data }))}
+              ></i>
+            </NavLink>
             <span>{data?.comments?.length}</span>
           </div>
           <div>

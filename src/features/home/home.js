@@ -12,7 +12,7 @@ export const Home = () => {
   const dispatch = useDispatch();
   const { posts, postsLoader } = useSelector((state) => state.posts);
   const { users } = useSelector((state) => state.profile);
-const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getPosts());
     dispatch(getUsers());
@@ -37,7 +37,10 @@ const navigate = useNavigate()
         <aside className="home-aside">
           <div className="aside-heading">People you may know : </div>
           {users.map((user) => (
-            <div className="profile-aside" onClick={()=>navigate(`/profile/${user.username}`)}>
+            <div
+              className="profile-aside"
+              onClick={() => navigate(`/profile/${user.username}`)}
+            >
               <img className="profile-img" src={user.profileIMG}></img>
               <div>@{user.username}</div>
             </div>

@@ -9,13 +9,12 @@ const initialState = {
 
 export const loginHandler = createAsyncThunk(
   "authentication/loginHandler",
-  async ({ cred, navigate, location }, thunkAPI) => { 
+  async ({ cred, navigate, location }, thunkAPI) => {
     try {
       const response = await axios.post(`/api/auth/login`, {
         username: cred.username,
         password: cred.password,
-    });
-   
+      });
 
       localStorage.setItem("token", response.data.encodedToken);
       localStorage.setItem("user", JSON.stringify(response.data.foundUser));
@@ -29,27 +28,26 @@ export const loginHandler = createAsyncThunk(
   }
 );
 
-export const signupHandler = createAsyncThunk("authentication/signupHandler",
-async({entries,navigate,location}, thunkAPI)=>{
-    try{
-        const response =await axios.post(`/api/auth/signup`,{
-            username : entries.username,
-            password : entries.password,
-            firstname : entries.firstname,
-            lastname : entries.lastname
-        });
-       
-        localStorage.setItem("token", response.data.encodedToken)
-        localStorage.setItem("auth", true);
-        navigate(location?.state?.from.pathname || "/",{replace:true});
-        return response.data;
-    }catch(error){
-        thunkAPI.rejectWithValue("incorrect entries")
+export const signupHandler = createAsyncThunk(
+  "authentication/signupHandler",
+  async ({ entries, navigate, location }, thunkAPI) => {
+    try {
+      const response = await axios.post(`/api/auth/signup`, {
+        username: entries.username,
+        password: entries.password,
+        firstname: entries.firstname,
+        lastname: entries.lastname,
+      });
+
+      localStorage.setItem("token", response.data.encodedToken);
+      localStorage.setItem("auth", true);
+      navigate(location?.state?.from.pathname || "/", { replace: true });
+      return response.data;
+    } catch (error) {
+      thunkAPI.rejectWithValue("incorrect entries");
     }
-})
-
-
-
+  }
+);
 
 const authSlice = createSlice({
   name: "authentication",
@@ -68,10 +66,11 @@ const authSlice = createSlice({
       state.user = action.payload?.foundUser;
       state.token = action.payload?.encodedToken;
     },
-    [signupHandler.fulfilled]: (state,action)=>{console.log(action)
-        state.isLoggedIn = true;
-        state.token = action.payload.encodedToken;
-    }
+    [signupHandler.fulfilled]: (state, action) => {
+      console.log(action);
+      state.isLoggedIn = true;
+      state.token = action.payload.encodedToken;
+    },
   },
 });
 
