@@ -31,4 +31,16 @@ export const users = [
     bio : 'what is meant to be will find a way',
     githubURL : 'https://github.com/vijayashree-kairamkonda'
   },
+  {
+    _id: uuid(),
+    firstName: "Flash",
+    lastName: "Kairamkonda",
+    username: "flashhhh",
+    password: "flash",
+    profileIMG:"https://static.vecteezy.com/system/resources/previews/006/936/406/non_2x/cute-golden-retriever-puppy-smiling-cartoon-illustration-vector.jpg",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    bio : "I'm a goooddddd doggyyy",
+    githubURL : 'https://github.com/flsjh'
+  },
 ];
